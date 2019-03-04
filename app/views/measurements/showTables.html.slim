@@ -5,49 +5,47 @@ h1 Tabular Data Results
     .col-xs-6
       h2.sub-header.text-center
         | Air Temperature
-      .table-responsive
-        table.table.table-striped
-          col[width="40%"]
-          col[width= "10%"]
-          col[width= "10%"]
-          col[width= "40%"]
-          thead.h3
-          tr
-            th.text-center Location
-            th.text-center Collection Date
-            th.text-center Value
-            th.text-center Units
+      table.table.table-striped
+        col[width="35%"]
+        col[width= "25%"]
+        col[width= "10%"]
+        col[width= "30%"]
+        thead.h3
+        tr
+          th.text-center Location
+          th.text-center Collection Date
+          th.text-center Value
+          th.text-center Units
 
-          tbody
-            - Measurement.air_temp.each do |msr|
-              tr
-                td.h5.text-left = msr.site_name
-                td.h5.text-center = msr.collection_date
-                td.h5.text-center = msr.result
-                td.h5.text-left = msr.units
+        tbody
+          - Measurement.air_temp.each do |msr|
+            tr
+              td.h5.text-left = msr.site_name
+              td.h5.text-center = msr.collection_date
+              td.h5.text-center = msr.result
+              td.h5.text-left = msr.units
     .col-xs-6
       h2.sub-header.text-center
         | Water Temperature
-      .table-responsive
-        table.table.table-striped
-          col[width="35%"]
-          col[width= "25%"]
-          col[width= "10%"]
-          col[width= "30%"]
-          thead.h3
-          tr
-            th.text-left Location
-            th.text-center Collection Date
-            th.text-center Value
-            th.text-left Units
+      table.table.table-striped
+        col[width="35%"]
+        col[width= "25%"]
+        col[width= "10%"]
+        col[width= "30%"]
+        thead.h3
+        tr
+          th.text-left Location
+          th.text-center Collection Date
+          th.text-center Value
+          th.text-left Units
 
-          tbody
-            - Measurement.water_temp.each do |msr|
-              tr
-                td.h5.text-center = msr.site_name
-                td.h5.text-center = msr.collection_date
-                td.h5.text-center = msr.result
-                td.h5.text-center = msr.units
+        tbody
+          - Measurement.water_temp.each do |msr|
+            tr
+              td.h5.text-center = msr.site_name
+              td.h5.text-center = msr.collection_date
+              td.h5.text-center = msr.result
+              td.h5.text-center = msr.units
   br
 
   / table [width = "96%"]
