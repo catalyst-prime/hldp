@@ -1,0 +1,52 @@
+/ p#notice = notice
+h1 Tabular Data Results
+.row
+  .col-med-1
+  .col-med-5
+    h2.text-center
+      | Air Temperature
+      table[width = "96%" border="1" cellpadding="45" cellspacing="45"]
+        col[width="30%"]
+        col[width= "20%"]
+        col[width= "20%"]
+        col[width= "30%"]
+          thead.h3
+            tr
+              th.text-center Location
+              th.text-center Collection Date
+              th.text-center Measurement
+              th.text-center Units
+
+          tbody
+            - Measurement.air_temp.each do |msr|
+              tr
+                td.h4.text-center = msr.site_name
+                td.h4.text-center = msr.collection_date
+                td.h4.text-center = msr.result
+                td.h4.text-center = msr.units
+  .col-med-1
+    .col-med-5
+      h2.text-center
+        | Water Temperature
+        table[width = "96%" border="1" cellpadding="45" cellspacing="45"]
+          col[width="30%"]
+          col[width= "20%"]
+          col[width= "20%"]
+          col[width= "30%"]
+            thead.h3
+              tr
+                th.text-center Location
+                th.text-center Collection Date
+                th.text-center Measurement
+                th.text-center Units
+
+            tbody
+              - Measurement.water_temp.each do |msr|
+                tr
+                  td.h4.text-center = msr.site_name
+                  td.h4.text-center = msr.collection_date
+                  td.h4.text-center = msr.result
+                  td.h4.text-center = msr.units
+br
+
+/ = link_to 'Back', spots_path
