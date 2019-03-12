@@ -1,0 +1,22 @@
+table.table.table-striped
+  col[width="35%"]
+  col[width= "25%"]
+  col[width= "10%"]
+  col[width= "30%"]
+  thead.h3
+  tr
+    th.text-center Location
+    th.text-center Collection Date
+    th.text-center Value
+    th.text-center Units
+
+  tbody
+    - @data.each do |msr|
+      tr
+        td.h6.text-center = msr.site_name
+        td.h6.text-center = msr.collection_date
+        td.h6.text-center = msr.result
+        td.h6.text-center = msr.units
+br
+br
+br
