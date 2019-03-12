@@ -1,17 +1,17 @@
 class Measurement < ApplicationRecord
 require 'csv'
-
+0
 scope :air_temp, -> { where(name: 'Air Temperature').order('month','site_name') }
-scope :phosphorus, -> { where(name: 'Phosphorus'.order('month','site_name',)) }
-scope :nitrate, -> { where(name: 'Nitrogen (Nitrate)').order('month','site_name',) }
-scope :nitrite, -> { where(name: 'Nitrogen (Nitrite)').order('month','site_name',) }
-scope :bpc, -> { where(name: 'Beach Plate Count; MPN').order('month','site_name',) }
-scope :ecoli, -> { where(name: 'Beach Plate Count; e-coli').order('month','site_name',) }
-scope :ph, -> { where(name: 'pH').order('month','site_name',) }
-scope :oxygen, -> { where(name: 'Dissolved Oxygen').order('month','site_name',) }
-scope :tds, -> { where(name: 'Total Dissolved Solids').order('month','site_name',) }
-scope :water_temp, -> { where(name: 'Water Temperature').order('month','site_name',) }
-scope :conductivity, -> { where(name: 'Conductivity').order('month','site_name',) }
+scope :phosphorus, -> { where(name: 'Phosphorus').order('month','site_name') }
+scope :nitrate, -> { where(name: 'Nitrogen (Nitrate)').order('month','site_name') }
+scope :nitrite, -> { where(name: 'Nitrogen (Nitrite)').order('month','site_name') }
+scope :bpc, -> { where(name: 'Beach Plate Count; MPN').order('month','site_name') }
+scope :ecoli, -> { where(name: 'Beach Plate Count; e-coli').order('month','site_name') }
+scope :ph, -> { where(name: 'pH').order('month','site_name') }
+scope :oxygen, -> { where(name: 'Dissolved Oxygen').order('month','site_name') }
+scope :tds, -> { where(name: 'Total Dissolved Solids').order('month','site_name') }
+scope :water_temp, -> { where(name: 'Water Temperature').order('month','site_name') }
+scope :conductivity, -> { where(name: 'Conductivity').order('month','site_name') }
 #May want scopes for site names as well, but hold off for now; above suitable for tables and graphs...
 
   def self.import(file_path)
