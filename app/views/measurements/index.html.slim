@@ -3,17 +3,73 @@ h2.text-center Lake Data and Information
 
 br
 br
+  .container-fluid
+  .row.text-left
+    .col-md-2
+    .col-md-8
+      .p The Higgins Lake Property Owners Association (HLPOA) approached Raven Analytical Laboratory in Roscommon, Michigan to provide water testing on Higgins Lake.
+      br
+      .p In discussions with Mr. Fred Swinhart, HLPOA contact, it was suggested that we make this testing a project in concert with the area high school chemistry students (teacher).  Raven personnel would train students with all the procedures and testing necessary  to complete this study.  The actual testing would take place in our EPA certified laboratory under the direct supervision of our staff.  We have performed this type of project with a number of high schools in our area. In this way we help reinforce the chemistry the students are learning and make the community aware of the concern for the total ecology of Higgins Lake.  While this is not a necessary component for the project, we have found that it can be very beneficial for the whole project and the community at large. Mr. Chuck Schepke, High school chemistry teacher was contacted along with Ms. Catherine Erickson, Superintendent Roscommon Area Public Schools and Mr. Fred Swinehart, HLPOA. This formed a team to begin effort on water testing at Higgins Lake.
+      br
+      .p The following tests were performed:
+      br
+      br
+    .col-md-2
+  .row.text-center.h5
+    .col-md-2
+    .col-md-4
+      = link_to "Water Temperature", "/airTemp", class: 'btn', style: 'background:#DAE2EE'
+      /.btn a[href="/documentation"] Documentation - Full Report
+    .col-md-4
+      = link_to "Air Temperature", "/waterTemp", class: 'btn', style: 'background:#DAE2EE'
+      /.btn a[href="/airTemp"] Air Temperature
+    .col-md-2
+  .row.text-center.h5
+    .col-md-2
+    .col-md-4
+      = link_to "Nitrate Nitrogen", "/nitrate", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/documentation"] Documentation - Full Report
+    .col-md-4
+      = link_to "Nitrite Nitrogen", "/nitrite", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/airTemp"] Air Temperature
+    .col-md-2
+  .row.text-center.h5
+    .col-md-2
+    .col-md-4
+      = link_to "Phosphorus", "/phosphorus", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/documentation"] Documentation - Full Report
+    .col-md-4
+      = link_to "pH", "/ph", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/airTemp"] Air Temperature
+    .col-md-2
+  .row.text-center.h5
+    .col-md-2
+    .col-md-4
+      = link_to "Dissolved Oxygen", "/oxygen", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/documentation"] Documentation - Full Report
+    .col-md-4
+      = link_to "Total Dissolved Solids", "/tds", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/airTemp"] Air Temperature
+    .col-md-2
+  .row.text-center.h5
+    .col-md-2
+    .col-md-4
+      = link_to "Beach Plate Count", "/beachPlateCount", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/documentation"] Documentation - Full Report
+    .col-md-4
+      = link_to "E Coli", "/ecoli", class: 'btn', style: 'background:#DAE2EE'
+    /.btn a[href="/airTemp"] Air Temperature
+    .col-md-2
+  .row.text-center.h5
+    .col-md-2
+    .col-md-4
+      = link_to "Conductivity", "/conductivity", class: 'btn', style: 'background:#DAE2EE'
+    .col-md-4
+    .col-md-2
+
+br
+br
 
 ul
-  li: a[href="/documentation"] Documentation - Full Report
-  li: a[href="/airTemp"] Air Temperature
-  li: a[href="/waterTemp"] Water Temperature
-  li: a[href="/phosphorus"] Phosphorus
-  li: a[href="/nitrate"] Nitrate Nitrogen
-  li: a[href="/nitrite"] Nitrite Nitrogen
-  li: a[href="/pH"] pH
-  li: a[href="/oxygen"] Oxygen
-  li: a[href="/tds"] Total Dissolved Solids
-  li: a[href="/conductivity"] Conductivity
-  li: a[href="/beachPlateCount"] Beach Plate Count
-  li: a[href="/eColi"] E Coli Count
+  li: a[href="http://www.gerrishtownship.org/sites/default/files/gerrishdocs/Higgins%20Lake%20SI%20Completion%20Report%202016.pdf"] External Data -- Gerrish Township Swimmer's Itch Report
+  li: a[href="/depth"] USGS Annual Lake Depth
