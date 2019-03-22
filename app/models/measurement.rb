@@ -1,6 +1,6 @@
 class Measurement < ApplicationRecord
 require 'csv'
-0
+
 scope :air_temp, -> { where(name: 'Air Temperature').order('month','site_name') }
 scope :phosphorus, -> { where(name: 'Phosphorus').order('month','site_name') }
 scope :nitrate, -> { where(name: 'Nitrogen (Nitrate)').order('month','site_name') }
@@ -22,6 +22,7 @@ scope :conductivity, -> { where(name: 'Conductivity').order('month','site_name')
     # Measurement.import('/Users/gryfon1/Desktop/ActiveCatalyst/Adderstone/HLDataPortalAPI/Data files/round4.csv')
     # WARN -- make sure the header fields have been 'sanitized' -- comma separated, no leading or trailing spaces
     # internal spaces are oky.  Delete units for conductivity and the 2 temperature measures
+    # NOTE -- this sanitizing pre-exists in csv exports from the original table, "measurmenets.csv"
 
   CSV.foreach(file_path, headers: true) do |row|
       data_hash = row.to_hash
