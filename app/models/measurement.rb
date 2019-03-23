@@ -25,6 +25,7 @@ scope :conductivity, -> { where(name: 'Conductivity').order('month','site_name')
     # NOTE -- this sanitizing pre-exists in csv exports from the original table, "measurmenets.csv"
 
   CSV.foreach(file_path, headers: true) do |row|
+    #warn -- this is for intermediate data files as contained in the report doc.  See importCSV for production
       data_hash = row.to_hash
       measures = ["Phosphorus", "Nitrogen (Nitrate)", "Nitrogen (Nitrite)","Beach Plate Count; MPN","Beach Plate Count; e-coli","pH","Dissolved Oxygen","Total Dissolved Solids","Water Temperature","Air Temperature","Conductivity"]
       measures.each do |measureName|
@@ -69,6 +70,8 @@ scope :conductivity, -> { where(name: 'Conductivity').order('month','site_name')
   end
 
   def self.importCSV(file_path)
+    #note -- this expects a csv file from a working postgres database so presumably no data issues
+    # see above for working, fragile, code for loading the local db
     #'"id","site","lab_id","name","result","units","month","day","year","created_at","updated_at","site_name","collection_date"'
     CSV.foreach(file_path, headers: true) do |row|
       data_hash = row.to_hash
