@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgis
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: HLDP_dev
+  database: HLDP_dev2
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: HLDP_production
-  username: HLDataPortal
-  password: <%= ENV['HLDATAPORTAL_DATABASE_PASSWORD'] %>
+#  database: HLDP_production
+  url: <%= ENV['DATABASE_URL'] %>
+#  username: HLDataPortal
+#  password: <%= ENV['HLDATAPORTAL_DATABASE_PASSWORD'] %>

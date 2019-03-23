@@ -68,6 +68,24 @@ scope :conductivity, -> { where(name: 'Conductivity').order('month','site_name')
     end
   end
 
+  def self.importCSV(file_path)
+    #'"id","site","lab_id","name","result","units","month","day","year","created_at","updated_at","site_name","collection_date"'
+    CSV.foreach(file_path, headers: true) do |row|
+      data_hash = row.to_hash
+      create(lab_id: data_hash["lab_id"],
+             site: data_hash["site"],
+             name: data_hash["name"],
+             result: data_hash["result"],
+             units: data_hash["units"],
+             month: data_hash["month"],
+             day: data_hash["day"],
+             year: data_hash["year"],
+             site_name: data_hash["site_name"],
+             collection_date: Date.parse(data_hash["collection_date"])
+      )
+      end
+    end
+
   def collection_date
     return Date.new(self.year, self.month, self.day)
   end
